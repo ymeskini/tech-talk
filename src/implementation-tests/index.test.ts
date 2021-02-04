@@ -5,25 +5,12 @@ describe("Api client stub", () => {
   test("should throw error", () => {});
 });
 
-describe("Reducer test", () => {
-
-})
+describe("Reducer test", () => {});
 
 describe("Actions...", () => {
-  // bunch of actions in here... not so 
-})
-
-
-// second approach:
-
-const customRender = (Component) => {
-  <ReduxProvider store={realStore}>
-    <Component />
-  </ReduxProvider>
-}
+  // bunch of actions in here... not so
+});
 
 describe("Todo", () => {
-  test("Can create a todo", () => {
-    
-  })
-})
+  test("Can create a todo", () => {});
+});

@@ -12,9 +12,3 @@ describe("Actions...", () => {
 });
 
 // second approach:
-
-const customRender = (Component) => {
-  <ReduxProvider store={realStore}>
-    <Component />
-  </ReduxProvider>;
-};
