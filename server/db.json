@@ -1,5 +1,6 @@
 {
   "todos": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    { "id": 1, "title": "Buy milk" },
+    { "id": 2, "title": "Do homework" }
   ]
 }

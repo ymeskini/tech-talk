@@ -1,5 +1,6 @@
 module.exports = (api) => {
-  const isProduction = api.env("production");
+  const isDevelopment = api.env("development");
+
   return {
     presets: [
       "@babel/preset-env",
@@ -11,6 +12,6 @@ module.exports = (api) => {
         },
       ],
     ],
-    plugins: [!isProduction && "react-refresh/babel"].filter(Boolean),
+    plugins: [isDevelopment && "react-refresh/babel"].filter(Boolean),
   };
 };
