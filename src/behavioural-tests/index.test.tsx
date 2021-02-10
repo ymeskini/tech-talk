@@ -1,4 +1,3 @@
-// import {} from "../../src/features/todo/todo-app";
 import "regenerator-runtime";
 import { TodoApp } from "../../src/features/todo/todo-app";
 import { render, screen } from "@testing-library/react";

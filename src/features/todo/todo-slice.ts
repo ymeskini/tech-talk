@@ -1,19 +1,28 @@
 import { createAction, createSlice } from "@reduxjs/toolkit";
 
-type Todo = {
+export type Todo = {
   id: number;
   title: string;
   done: boolean;
 };
 
 export const startFetchingTodos = createAction("startFetchingTodos");
-const todoSlice = createSlice<{ todos: Todo[] }, any, any>({
+const todoSlice = createSlice({
   name: "todo",
   initialState: {
-    todos: [],
+    todos: [] as Todo[],
   },
-  reducers: {},
+  reducers: {
+    setTodos: (state, action) => {
+      state.todos = action.payload;
+    },
+  },
 });
 
-const { reducer } = todoSlice;
+const {
+  reducer,
+  actions: { setTodos },
+} = todoSlice;
+
+export { setTodos };
 export default reducer;

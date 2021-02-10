@@ -3,12 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import setupStore from "./store/setup-store";
 
-import {
-  ChakraProvider,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-} from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import TodoApp from "./features/todo/todo-app";
 
 const store = setupStore();

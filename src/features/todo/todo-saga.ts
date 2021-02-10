@@ -1,12 +1,6 @@
-import axios, { AxiosInstance, AxiosResponse } from "axios";
-import { all, call, select, takeEvery } from "redux-saga/effects";
-import { startFetchingTodos } from "./todo-slice";
-
-type Todo = {
-  id: number;
-  title: string;
-  author: string;
-};
+import axios, { AxiosInstance } from "axios";
+import { call, put, takeEvery } from "redux-saga/effects";
+import { setTodos, startFetchingTodos } from "./todo-slice";
 
 const initiTodoLayer = (apiClient: AxiosInstance) => {
   const getTodos = () => {
@@ -21,10 +15,10 @@ const api = () =>
     baseURL: "http://localhost:3000",
   });
 
-function* fetchTodos(action: any) {
+function* fetchTodos() {
   const apiClient = initiTodoLayer(api());
-  const todos = yield call(apiClient.getTodos);
-  console.log(todos);
+  const { data } = yield call(apiClient.getTodos);
+  yield put({ type: setTodos.type, payload: data });
 }
 
 function* watchTodoSaga() {

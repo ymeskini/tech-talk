@@ -5,7 +5,7 @@ import { ReduxState } from "../../store/root-reducer";
 import { startFetchingTodos } from "./todo-slice";
 
 export const TodoApp = () => {
-  const { todos } = useSelector<ReduxState>((state) => state.todo);
+  const todos = useSelector((state: ReduxState) => state.todo.todos);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export const TodoApp = () => {
       <input />
       <List>
         {todos ? (
-          todos.map((todo) => <ListItem>{todo.title}</ListItem>)
+          todos.map((todo) => <ListItem key={todo.id}>{todo.title}</ListItem>)
         ) : (
           <ListItem>No todos</ListItem>
         )}
